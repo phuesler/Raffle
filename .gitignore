@@ -11,3 +11,5 @@ appcast/*
 .DS_Store
 profile
 dsa_priv.pem
+.rake_tasks~
+tmp/*

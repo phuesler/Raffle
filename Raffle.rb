@@ -10,17 +10,19 @@ class Raffle
   end
   
   def raffle
-    NSThread.detachNewThreadSelector(:reallyRun, toTarget: self, withObject: nil)
+    NSThread.detachNewThreadSelector(:run, toTarget: self, withObject: nil)
   end
   
   private
   
-  def reallyRun
+  def run
     name = nil
-    1.upto(5 + rand(5)) do 
+    bound = @names.size / 4
+    1.upto(bound + rand(bound)) do
       name = @names[rand(@names.size)]
       @delegate.updateName(name)
-      sleep(1)
+      sleep(0.1)
     end
+    @names.delete(name)
   end
 end

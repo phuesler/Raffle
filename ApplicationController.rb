@@ -3,14 +3,15 @@
 #
 # Created by phuesler on 13.05.10.
 # Copyright 2010 huesler informatik. All rights reserved.
+require 'csv'
+
 class ApplicationController
   attr_accessor :contentView, :nameLabel
   
   def applicationDidFinishLaunching(sender)
     NSLog("Launched app")
     contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
-    @raffle = Raffle.new(["Peter Moosmeier", "James Brown", "Jack Richardson", "Michael Jackson"], self)
-    # contentView.enterFullScreenMode(contentView.window.screen,withOptions:nil)
+    @raffle = Raffle.new(read_csv, self)
   end
   
   def raffle(sender)
@@ -18,7 +19,6 @@ class ApplicationController
   end
   
   def updateName(name)
-    NSLog(name)
     nameLabel.stringValue = name
   end
   
@@ -27,10 +27,14 @@ class ApplicationController
       contentView.exitFullScreenModeWithOptions(nil)
     else
       contentView.enterFullScreenMode(contentView.window.screen,withOptions:nil)
-      # contentView.subviews.each do |subview|
-      #   subview.removeFromSuperview
-      #   contentView.addSubview(subview)
-      # end
     end
+  end
+  
+  def read_csv
+    names = []
+    CSV.foreach(File.expand_path(File.dirname(__FILE__)) + '/../../../../../tmp/csv_test_file.csv') do |row|
+      names << row[0]
+    end
+    names
   end
 end
