@@ -6,7 +6,7 @@
 require 'csv'
 
 class ApplicationController
-  attr_accessor :contentView, :nameLabel, :raffleButton
+  attr_accessor :contentView, :nameLabel, :raffleButton, :preferenceController
   
   def awakeFromNib
     contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
@@ -22,6 +22,17 @@ class ApplicationController
       @raffle = Raffle.new(read_csv(dialog.filenames.first), self)
       raffleButton.enabled = true
     end
+  end
+  
+  def preferenceController
+    unless @preferenceController
+      @preferenceController = PreferenceController.alloc.init
+    end
+    @preferenceController
+  end
+  
+  def showPreferencePanel(sender)
+    preferenceController.showWindow(self)
   end
   
   def raffle(sender)

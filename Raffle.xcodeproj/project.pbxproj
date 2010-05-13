@@ -45,6 +45,8 @@
 /* Begin PBXBuildFile section */
 		0381F4C3119C557E00C3A8FD /* ApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0381F4C2119C557E00C3A8FD /* ApplicationController.rb */; };
 		0381F592119C61D700C3A8FD /* Raffle.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0381F591119C61D700C3A8FD /* Raffle.rb */; };
+		0381F693119CA1E200C3A8FD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0381F692119CA1E200C3A8FD /* Preferences.xib */; };
+		0381F695119CA24B00C3A8FD /* PreferenceController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0381F694119CA24B00C3A8FD /* PreferenceController.rb */; };
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
@@ -68,6 +70,8 @@
 /* Begin PBXFileReference section */
 		0381F4C2119C557E00C3A8FD /* ApplicationController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ApplicationController.rb; sourceTree = "<group>"; };
 		0381F591119C61D700C3A8FD /* Raffle.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Raffle.rb; sourceTree = "<group>"; };
+		0381F692119CA1E200C3A8FD /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		0381F694119CA24B00C3A8FD /* PreferenceController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PreferenceController.rb; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -101,6 +105,7 @@
 			children = (
 				0381F4C2119C557E00C3A8FD /* ApplicationController.rb */,
 				0381F591119C61D700C3A8FD /* Raffle.rb */,
+				0381F694119CA24B00C3A8FD /* PreferenceController.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				0381F692119CA1E200C3A8FD /* Preferences.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
 				0381F4C3119C557E00C3A8FD /* ApplicationController.rb in Resources */,
 				0381F592119C61D700C3A8FD /* Raffle.rb in Resources */,
+				0381F693119CA1E200C3A8FD /* Preferences.xib in Resources */,
+				0381F695119CA24B00C3A8FD /* PreferenceController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
