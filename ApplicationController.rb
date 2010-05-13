@@ -6,9 +6,8 @@
 class ApplicationController
   attr_accessor :contentView
   
-  def applicationDidFinisheLaunching(sender)
-    # contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
-    # CGColorRelease(contentView.layer.backgroundColor)
+  def applicationDidFinishLaunching(sender)
+    NSLog("Launched app")
   end
   
   def toggleFullscreen(sender)

@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="29"/>
-			<integer value="372"/>
+			<integer value="371"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -779,13 +779,14 @@
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSButton" id="203810213">
+						<object class="NSButton" id="949351806">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{137, 229}, {142, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="505068600">
+							<object class="NSButtonCell" key="NSCell" id="629737216">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">ToggleFullsceen</string>
@@ -794,7 +795,7 @@
 									<double key="NSSize">13</double>
 									<int key="NSfFlags">1044</int>
 								</object>
-								<reference key="NSControlView" ref="203810213"/>
+								<reference key="NSControlView" ref="949351806"/>
 								<int key="NSButtonFlags">-2038284033</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -806,11 +807,13 @@
 					</object>
 					<string key="NSFrameSize">{480, 360}</string>
 					<reference key="NSSuperview"/>
+					<bool key="NSViewIsLayerTreeHost">YES</bool>
+					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
-			<object class="NSCustomObject" id="754129233">
+			<object class="NSCustomObject" id="995047144">
 				<string key="NSClassName">ApplicationController</string>
 			</object>
 		</object>
@@ -1132,7 +1135,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">contentView</string>
-						<reference key="source" ref="754129233"/>
+						<reference key="source" ref="995047144"/>
 						<reference key="destination" ref="439893737"/>
 					</object>
 					<int key="connectionID">376</int>
@@ -1141,7 +1144,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="754129233"/>
+						<reference key="destination" ref="995047144"/>
 					</object>
 					<int key="connectionID">377</int>
 				</object>
@@ -1156,8 +1159,8 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">toggleFullscreen:</string>
-						<reference key="source" ref="754129233"/>
-						<reference key="destination" ref="203810213"/>
+						<reference key="source" ref="995047144"/>
+						<reference key="destination" ref="949351806"/>
 					</object>
 					<int key="connectionID">381</int>
 				</object>
@@ -1774,28 +1777,28 @@
 						<reference key="object" ref="439893737"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="203810213"/>
+							<reference ref="949351806"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">375</int>
-						<reference key="object" ref="754129233"/>
+						<reference key="object" ref="995047144"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">379</int>
-						<reference key="object" ref="203810213"/>
+						<reference key="object" ref="949351806"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="505068600"/>
+							<reference ref="629737216"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">380</int>
-						<reference key="object" ref="505068600"/>
-						<reference key="parent" ref="203810213"/>
+						<reference key="object" ref="629737216"/>
+						<reference key="parent" ref="949351806"/>
 					</object>
 				</object>
 			</object>
@@ -1944,6 +1947,7 @@
 					<string>371.NSWindowTemplate.visibleAtLaunch</string>
 					<string>371.editorWindowContentRectSynchronizationRect</string>
 					<string>372.IBPluginDependency</string>
+					<string>372.IBViewIntegration.shadowColor</string>
 					<string>375.IBPluginDependency</string>
 					<string>379.IBPluginDependency</string>
 					<string>380.IBPluginDependency</string>
@@ -2119,12 +2123,16 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{636, 310}, {480, 360}}</string>
+					<string>{{475, 306}, {480, 360}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{636, 310}, {480, 360}}</string>
+					<string>{{475, 306}, {480, 360}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSColor">
+						<int key="NSColorSpace">1</int>
+						<bytes key="NSRGB">MCAwIDAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2192,7 +2200,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>applicationDidFinisheLaunching:</string>
+							<string>applicationDidFinishLaunching:</string>
 							<string>toggleFullscreen:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2205,13 +2213,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>applicationDidFinisheLaunching:</string>
+							<string>applicationDidFinishLaunching:</string>
 							<string>toggleFullscreen:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
-								<string key="name">applicationDidFinisheLaunching:</string>
+								<string key="name">applicationDidFinishLaunching:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
