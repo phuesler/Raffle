@@ -9,9 +9,11 @@ class ApplicationController
   attr_accessor :contentView, :nameLabel
   
   def applicationDidFinishLaunching(sender)
-    NSLog("Launched app")
-    contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
     @raffle = Raffle.new(read_csv, self)
+  end
+  
+  def awakeFromNib
+    contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
   end
   
   def raffle(sender)
