@@ -7,6 +7,11 @@
 #
 
 class PreferenceController  < NSWindowController
+  BackgroundColorKey = 'backgroundColor'
+  TextColorKey = 'textColor'
+  BackgroundColorChangedNotification = 'BackgroundColorChangedNotification'
+  TextColorChangedNotification = 'TextColorChangedNotification'
+  
   attr_accessor :backgroundColorWell, :textColorWell
   
   def init
@@ -23,25 +28,21 @@ class PreferenceController  < NSWindowController
   end
   
   def textColor
-    unarchiveColorForKey("textColor") || NSColor.whiteColor
+    unarchiveColorForKey(TextColorKey) || NSColor.whiteColor
   end
   
   def backgroundColor
-    unarchiveColorForKey("backgroundColor") || NSColor.blackColor
+    unarchiveColorForKey(BackgroundColorKey) || NSColor.blackColor
   end
   
   def changeBackgroundColor(sender)
-    NSUserDefaults.standardUserDefaults.setObject(
-        NSArchiver.archivedDataWithRootObject(backgroundColorWell.color),
-        forKey: "backgroundColor"
-      )
+    archiveColor(backgroundColorWell.color, BackgroundColorKey)
+    postNotification(BackgroundColorChangedNotification)
   end
   
   def changeTextColor(sender)
-    NSUserDefaults.standardUserDefaults.setObject(
-        NSArchiver.archivedDataWithRootObject(textColorWell.color),
-        forKey: "textColor"
-      )
+    archiveColor(textColorWell.color, TextColorKey)
+    postNotification(TextColorChangedNotification)
   end
   
   private
@@ -50,5 +51,18 @@ class PreferenceController  < NSWindowController
     NSUnarchiver.unarchiveObjectWithData(
         NSUserDefaults.standardUserDefaults.dataForKey(key)
       )
+  end
+  
+  def archiveColor(color,key)
+    NSUserDefaults.standardUserDefaults.setObject(
+        NSArchiver.archivedDataWithRootObject(color),
+        forKey: key
+      )    
+  end
+  
+  def postNotification(key)
+    NSNotificationCenter.defaultCenter.postNotificationName(
+                                        key,
+                                        object: self)
   end
 end

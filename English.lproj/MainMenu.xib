@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="57"/>
-			<integer value="372"/>
+			<integer value="383"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -821,7 +821,6 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<reference key="NSControlView" ref="91392853"/>
-								<bool key="NSDrawsBackground">YES</bool>
 								<object class="NSColor" key="NSBackgroundColor" id="396706287">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -886,7 +885,7 @@
 			<object class="NSCustomObject" id="995047144">
 				<string key="NSClassName">ApplicationController</string>
 			</object>
-			<object class="NSCustomObject" id="389182143">
+			<object class="NSCustomObject" id="722691919">
 				<string key="NSClassName">PreferenceController</string>
 			</object>
 		</object>
@@ -1273,7 +1272,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">preferenceController</string>
 						<reference key="source" ref="995047144"/>
-						<reference key="destination" ref="389182143"/>
+						<reference key="destination" ref="722691919"/>
 					</object>
 					<int key="connectionID">395</int>
 				</object>
@@ -1968,7 +1967,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">394</int>
-						<reference key="object" ref="389182143"/>
+						<reference key="object" ref="722691919"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -2482,6 +2481,70 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PreferenceController</string>
 					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeBackgroundColor:</string>
+							<string>changeTextColor:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeBackgroundColor:</string>
+							<string>changeTextColor:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">changeBackgroundColor:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">changeTextColor:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backgroundColorWell</string>
+							<string>textColorWell</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backgroundColorWell</string>
+							<string>textColorWell</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">backgroundColorWell</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">textColorWell</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">PreferenceController.rb</string>

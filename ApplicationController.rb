@@ -8,8 +8,34 @@ require 'csv'
 class ApplicationController
   attr_accessor :contentView, :nameLabel, :raffleButton, :preferenceController
   
+  def init
+    if !super
+      return nil
+    end
+    
+    center = NSNotificationCenter.defaultCenter
+    center.addObserver(self,
+                       selector: :"handleTextColorChange:",
+                       name: PreferenceController::TextColorChangedNotification,
+                       object: nil)
+   center.addObserver(self,
+                      selector: :"handleBackgroundColorChange:",
+                      name: PreferenceController::BackgroundColorChangedNotification,
+                      object: nil)
+    return self
+  end
+  
+  def handleBackgroundColorChange(notification)
+    contentView.layer.backgroundColor = convertColor(preferenceController.backgroundColor)
+  end
+  
+  def handleTextColorChange(notification)
+    nameLabel.setTextColor(preferenceController.textColor)
+  end
+  
   def awakeFromNib
-    contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
+    handleTextColorChange(nil)
+    handleBackgroundColorChange(nil)
   end
   
   def showOpenPanel(sender)
@@ -60,5 +86,9 @@ class ApplicationController
       names << row[0]
     end
     names
+  end
+  
+  def convertColor(color)
+    CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 1)
   end
 end
