@@ -6,14 +6,22 @@
 require 'csv'
 
 class ApplicationController
-  attr_accessor :contentView, :nameLabel
-  
-  def applicationDidFinishLaunching(sender)
-    @raffle = Raffle.new(read_csv, self)
-  end
+  attr_accessor :contentView, :nameLabel, :raffleButton
   
   def awakeFromNib
     contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
+  end
+  
+  def showOpenPanel(sender)
+    dialog = NSOpenPanel.openPanel
+    dialog.canChooseFiles = true
+    dialog.canChooseDirectories = false
+    dialog.allowsMultipleSelection = false
+    # FIXME: filter files to csv
+    if dialog.runModalForDirectory(nil, file:nil) == NSOKButton
+      @raffle = Raffle.new(read_csv(dialog.filenames.first), self)
+      raffleButton.enabled = true
+    end
   end
   
   def raffle(sender)
@@ -32,9 +40,12 @@ class ApplicationController
     end
   end
   
-  def read_csv
+  
+  private
+  
+  def read_csv(path)
     names = []
-    CSV.foreach(File.expand_path(File.dirname(__FILE__)) + '/../../../../../tmp/csv_test_file.csv') do |row|
+    CSV.foreach(path) do |row|
       names << row[0]
     end
     names
