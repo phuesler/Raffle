@@ -8,8 +8,18 @@ class ApplicationController
   
   def applicationDidFinishLaunching(sender)
     NSLog("Launched app")
-    contentView.layer.backgroundColor = CGColorCreateGenericRGB(255, 255, 255, 1)
-    # CGColorRelease(contentView.layer.backgroundColor)
+    contentView.layer.backgroundColor = CGColorCreateGenericRGB(0, 0, 0, 1)
+    @raffle = Raffle.new(["Peter Moosmeier", "James Brown", "Jack Richardson", "Michael Jackson"], self)
+    # contentView.enterFullScreenMode(contentView.window.screen,withOptions:nil)
+  end
+  
+  def raffle(sender)
+    @raffle.raffle
+  end
+  
+  def updateName(name)
+    NSLog(name)
+    nameLabel.stringValue = name
   end
   
   def toggleFullscreen(sender)
