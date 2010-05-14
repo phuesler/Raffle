@@ -4,4 +4,4 @@ Ever wanted to make a Tombula? Raffle takes a CSV file as input and displays the
 
 ## Download
 
-The most recent version can be found [here.](http://applications.huesler-informatik.ch/#TweetScreen)
+The most recent version can be found [here.](http://applications.huesler-informatik.ch/#Raffle)
