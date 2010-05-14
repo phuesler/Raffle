@@ -14,6 +14,14 @@ class PreferenceController  < NSWindowController
   
   attr_accessor :backgroundColorWell, :textColorWell
   
+  def self.registerDefaults
+    defaults = {}
+    defaults[BackgroundColorKey] = NSArchiver.archivedDataWithRootObject(NSColor.blackColor)
+    defaults[TextColorKey] = NSArchiver.archivedDataWithRootObject(NSColor.whiteColor)
+    NSUserDefaults.standardUserDefaults.registerDefaults(defaults)
+  end
+  registerDefaults
+  
   def init
     if(!super.initWithWindowNibName("Preferences"))
       return nil
@@ -28,11 +36,11 @@ class PreferenceController  < NSWindowController
   end
   
   def textColor
-    unarchiveColorForKey(TextColorKey) || NSColor.whiteColor
+    unarchiveColorForKey(TextColorKey)
   end
   
   def backgroundColor
-    unarchiveColorForKey(BackgroundColorKey) || NSColor.blackColor
+    unarchiveColorForKey(BackgroundColorKey)
   end
   
   def changeBackgroundColor(sender)
